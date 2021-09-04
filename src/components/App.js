@@ -22,10 +22,6 @@ export default function App() {
     setSelectedVideo(response.data.items[0]);
   };
 
-  const onVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
-
   return (
     <div className="ui container">
       <SearchBar onFormSubmit={onTermSubmit} />
@@ -35,7 +31,7 @@ export default function App() {
             <VideoDetail selectedVideo={selectedVideo} />
           </div>
           <div className="six wide column">
-            <VideoList videos={videos} onVideoSelect={onVideoSelect} />
+            <VideoList videos={videos} onVideoSelect={setSelectedVideo} />
           </div>
         </div>
       </div>
